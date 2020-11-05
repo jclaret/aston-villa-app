@@ -10,3 +10,4 @@ RUN npm run build
 FROM registry.redhat.io/rhel8/nginx-116
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /usr/src/app/dist/aston-villa-app /usr/share/nginx/html
+CMD ["/usr/libexec/s2i/run"]
