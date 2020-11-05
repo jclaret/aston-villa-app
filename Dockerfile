@@ -5,7 +5,6 @@ COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
 USER 1001
-RUN chown -R default: /usr/src/app
 RUN npm run build
 CMD ["npm", "run", "start"]
 
