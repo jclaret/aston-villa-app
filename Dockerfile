@@ -1,7 +1,7 @@
 ### STAGE 1: Build ###
 FROM registry.access.redhat.com/ubi8/nodejs-12:latest AS build
 WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
+COPY package.json ./
 RUN npm install
 COPY . .
 RUN npm run build
