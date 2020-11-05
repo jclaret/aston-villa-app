@@ -8,5 +8,6 @@ RUN npm run build
 
 ### STAGE 2: Run ###
 FROM nginx:1.17.1-alpine
+EXPOSE 8080
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /usr/src/app/dist/aston-villa-app /usr/share/nginx/html
